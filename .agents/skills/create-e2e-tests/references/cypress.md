@@ -156,10 +156,14 @@ Lift a DOM sequence into a custom command when the **same dance repeats in two o
 
    ```ts
    // support/commands/select-commands.ts
-   Cypress.Commands.add('pickOption', { prevSubject: 'element' }, (subject: JQuery<HTMLElement>, label: string) => {
-     cy.wrap(subject).findByRole('combobox').click();
-     cy.findByRole('option', { name: label }).click();
-   });
+   Cypress.Commands.add(
+     'pickOption',
+     { prevSubject: 'element' },
+     (subject: JQuery<HTMLElement>, label: string) => {
+       cy.wrap(subject).findByRole('combobox').click();
+       cy.findByRole('option', { name: label }).click();
+     },
+   );
    ```
 
 2. Register the file in `support/e2e.ts` (`import './commands/select-commands';`).

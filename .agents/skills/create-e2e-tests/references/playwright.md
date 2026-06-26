@@ -47,7 +47,9 @@ export default defineConfig({
   },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
   webServer: {
-    command: process.env.CI ? 'npx ng build && npx http-server dist/<app>/browser -p 4200 -s' : 'npx ng serve',
+    command: process.env.CI
+      ? 'npx ng build && npx http-server dist/<app>/browser -p 4200 -s'
+      : 'npx ng serve',
     url: 'http://localhost:4200',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
@@ -110,7 +112,9 @@ Scope locators to a region to disambiguate repeated elements:
 
 ```ts
 const userTable = page.getByRole('table', { name: 'Users' });
-const adminRow = userTable.getByRole('row').filter({ has: page.getByRole('cell', { name: 'Admin' }) });
+const adminRow = userTable
+  .getByRole('row')
+  .filter({ has: page.getByRole('cell', { name: 'Admin' }) });
 await adminRow.getByRole('button', { name: 'Edit' }).click();
 ```
 

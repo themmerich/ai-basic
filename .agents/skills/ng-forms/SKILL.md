@@ -181,7 +181,16 @@ this.form().dirty();
 ### Built-in Validators
 
 ```typescript
-import { form, required, email, min, max, minLength, maxLength, pattern } from '@angular/forms/signals';
+import {
+  form,
+  required,
+  email,
+  min,
+  max,
+  minLength,
+  maxLength,
+  pattern,
+} from '@angular/forms/signals';
 
 const userForm = form(this.userModel, (schemaPath) => {
   // Required field
