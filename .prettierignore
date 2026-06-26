@@ -1,0 +1,12 @@
+# Build output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Dependencies
+/node_modules
+
+# Misc
+/.angular/cache
+package-lock.json

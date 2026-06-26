@@ -52,7 +52,12 @@ A single host component reads the param and renders one variant:
 @Component({
   selector: 'app-orders-prototype',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [OrdersVariantAComponent, OrdersVariantBComponent, OrdersVariantCComponent, PrototypeSwitcherComponent],
+  imports: [
+    OrdersVariantAComponent,
+    OrdersVariantBComponent,
+    OrdersVariantCComponent,
+    PrototypeSwitcherComponent,
+  ],
   template: `
     @switch (variant()) {
       @case ('B') {

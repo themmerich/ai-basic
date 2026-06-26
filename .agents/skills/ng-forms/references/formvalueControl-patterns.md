@@ -11,7 +11,13 @@ interface Rating {
   rating: number;
 }
 
-import { form, FormField, FormValueControl, ValidationError, WithOptionalField } from '@angular/forms/signals';
+import {
+  form,
+  FormField,
+  FormValueControl,
+  ValidationError,
+  WithOptionalField,
+} from '@angular/forms/signals';
 import { MatIconModule } from '@angular/material/icon';
 import { MatError } from '@angular/material/form-field';
 
